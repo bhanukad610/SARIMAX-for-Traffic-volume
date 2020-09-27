@@ -35,7 +35,7 @@ train_x = df_train[['speed_avg', 'seconds_zone', 'temp', 'pressure',
 # print("\nSeasonal factor =", seasonal_oder[3])
 
 
-step_wise=auto_arima(train_y[1:], max_order=None, test='adf', m = seasonal_oder[3], seasonal=True,
+step_wise=auto_arima(train_y[1:], max_order=None, test='adf', m = 24, seasonal=True,
                       max_P=5, max_D= 1, max_Q=3, 
                      exogenous= train_x[1:],
                       maxiter=40, alpha=0.05, 
