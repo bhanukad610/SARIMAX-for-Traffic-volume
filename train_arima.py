@@ -24,6 +24,7 @@ df['seconds_zone'] = df['seconds_zone'].interpolate(method ='time')
 nobs = int(len(df) * 0.2)
 df_train, df_test = df[0:-nobs], df[-nobs:]
 train_size = len(df_train)
+review_size = len(df_train)
 test_size = len(df_test)
 
 from statsmodels.tsa.stattools import acf
