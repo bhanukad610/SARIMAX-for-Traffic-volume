@@ -52,6 +52,10 @@ test_y = df_test['traffic_volume']
 test_x = df_test[['speed_avg', 'seconds_zone', 'temp', 'pressure',
        'humidity', 'wind_speed', 'wind_deg', 'rain_1h', 'rain_3h', 'snow_1h',
        'snow_3h', 'clouds_all']]
+#  Feature test
+test_new = df_test[['speed_avg', 'seconds_zone', 'temp', 'pressure',
+       'humidity', 'wind_speed', 'wind_deg', 'rain_1h', 'rain_3h', 'snow_1h',
+       'snow_3h', 'clouds_all']]
 
 model= SARIMAX(train_y, exog=train_x, order=(2,0,2), seasonal_order=(3,0,3,24))
 results= model.fit()
