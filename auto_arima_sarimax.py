@@ -18,6 +18,7 @@ df['snow_3h'].replace([np.nan], value = [0], inplace = True)
 df['traffic_volume'] = df['traffic_volume'].interpolate(method ='time')
 df['speed_avg'] = df['speed_avg'].interpolate(method ='time')
 df['seconds_zone'] = df['seconds_zone'].interpolate(method ='time')
+df['rain_zone'] = df['seconds_zone'].interpolate(method ='time')
 
 df = df['2017-06-01 12:00:00':'2019-08-20 23:30:00']
 nobs = int(len(df) * 0.2)
